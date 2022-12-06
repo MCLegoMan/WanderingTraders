@@ -1,3 +1,11 @@
+/*
+    WanderingTraders v1.0.1
+    https://github.com/MCLegoMan/WanderingTraders
+
+    Author: Daniel-Tayden Larsen (MCLegoMan)
+    License: MCLM-OSL (2022)
+*/
+
 package com.mclegoman.wanderingtraders.registry;
 
 import net.fabricmc.loader.api.FabricLoader;

@@ -25,10 +25,5 @@
   },
   "mixins": [
     "wanderingtraders.mixins.json"
-  ],
-
-  "depends": {
-    "minecraft": ">=1.19.2",
-    "java": ">=17"
-  }
+  ]
 }
