@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "wanderingtraders",
+  "version": "${version}",
+
+  "name": "Wandering Traders",
+  "description": "Adds various trades to the Wandering Trader.",
+  "authors": [
+    "MCLegoMan"
+  ],
+  "contact": {
+    "homepage": "https://twitch.tv/mclegoman"
+  },
+  "license": "MCLM-OSL (2022)",
+  "icon": "assets/wanderingtraders/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.mclegoman.wanderingtraders.ServerMain"
+    ],
+    "client": [
+      "com.mclegoman.wanderingtraders.ClientMain"
+    ]
+  },
+  "mixins": [
+    "wanderingtraders.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  }
+}
