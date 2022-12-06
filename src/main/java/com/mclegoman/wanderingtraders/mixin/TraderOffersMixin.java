@@ -9,10 +9,11 @@
 package com.mclegoman.wanderingtraders.mixin;
 
 import com.google.common.collect.ImmutableMap;
+import com.mclegoman.wanderingtraders.ServerMain;
 import com.mclegoman.wanderingtraders.config.Configs;
+import com.mclegoman.wanderingtraders.registry.Placeholders;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.item.Items;
-import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,7 +31,10 @@ public class TraderOffersMixin {
 
     @Shadow private native static Int2ObjectMap<TradeOffers.Factory[]> copyToFastUtilMap(ImmutableMap<Integer, TradeOffers.Factory[]> immutableMap);
     static {
-        if(Configs.TRADE_TYPE == "custom"){
+        if(Configs.TRADE_TYPE.equalsIgnoreCase("custom")){
+            if(Configs.DEBUG.equalsIgnoreCase("true")){
+                Placeholders.LOGGER.info(Placeholders.PREFIX + "DEBUG: Config: " + "\" " + Configs.TRADE_TYPE + "\"" + "Game: \"custom\"");
+            }
             WANDERING_TRADER_TRADES = copyToFastUtilMap(ImmutableMap.of(1,
                     new TradeOffers.Factory[]{
                             new TradeOffers.SellItemFactory(Items.SEA_PICKLE, 2, 1, 5, 1),
@@ -105,12 +109,17 @@ public class TraderOffersMixin {
                             new TradeOffers.SellItemFactory(Items.GUNPOWDER, 1, 1, 8, 1),
                             new TradeOffers.SellItemFactory(Items.PODZOL, 3, 3, 6, 1),
                             new TradeOffers.SellItemFactory(Items.TURTLE_EGG, 6, 1, 3, 1)}));
-        } else if (Configs.TRADE_TYPE == "disableTrades") {
-            WANDERING_TRADER_TRADES = copyToFastUtilMap(ImmutableMap.of(1,
-                    new TradeOffers.Factory[]{}, 2,
-                    new TradeOffers.Factory[]{}));
-        } else {
+        } else if (Configs.TRADE_TYPE.equalsIgnoreCase("vanilla")) {
+            if(Configs.DEBUG.equalsIgnoreCase("true")){
+                Placeholders.LOGGER.info(Placeholders.PREFIX + "DEBUG: Config: " + "\" " + Configs.TRADE_TYPE + "\"" + "Game: \"vanilla\"");
+            }
             WANDERING_TRADER_TRADES = TradeOffers.WANDERING_TRADER_TRADES;
+        } else {
+            if(Configs.DEBUG.equalsIgnoreCase("true")){
+                Placeholders.LOGGER.info(Placeholders.PREFIX + "DEBUG: Config: " + "\" " + Configs.TRADE_TYPE + "\"" + "Game: \"else\"");
+            }
+            WANDERING_TRADER_TRADES = copyToFastUtilMap(ImmutableMap.of(1,
+                    new TradeOffers.Factory[]{}));
         }
     }
 }

@@ -15,13 +15,10 @@ import net.fabricmc.loader.api.FabricLoader;
 
 public class ServerMain implements ModInitializer {
     public static boolean legolibInstalled = false;
-
     @Override
     public void onInitialize() {
         Placeholders.LOGGER.info(Placeholders.PREFIX + "Initializing Server!");
         Configs.register();
-
-
         FabricLoader.getInstance().getModContainer("legolib").ifPresent(
                 modContainer -> {
                     legolibInstalled = true;

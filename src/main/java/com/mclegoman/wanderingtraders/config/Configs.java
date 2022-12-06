@@ -16,6 +16,7 @@ public class Configs {
     private static ConfigProvider configs;
 
     public static String TRADE_TYPE;
+    public static String DEBUG;
 
     public static void register() {
         configs = new ConfigProvider();
@@ -38,10 +39,12 @@ public class Configs {
         configs.addComment("TradeTypes: \"vanilla\" \"custom\" \"disableTrades\"");
         configs.addLineBreak();
         configs.addKeyValuePair(new Pair<>("TradeType", "custom"));
+        configs.addKeyValuePair(new Pair<>("debug", "false"));
     }
 
     private static void assignConfigs() {
         TRADE_TYPE = CONFIG.getOrDefault("TradeType", "custom");
+        TRADE_TYPE = CONFIG.getOrDefault("debug", "false");
 
         System.out.println("All " + configs.getConfigsList().size() + " have been set properly");
     }
