@@ -2,13 +2,7 @@ package com.mclegoman.wanderingtraders.mixin;
 
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.minecraft.block.Block;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,44 +17,6 @@ public class TraderOffersMixin {
     @Mutable
     @Shadow
     public static final Int2ObjectMap<TradeOffers.Factory[]> WANDERING_TRADER_TRADES;
-
-    public static class SellItemFactory implements TradeOffers.Factory {
-        private final ItemStack sell;
-        private final int price;
-        private final int count;
-        private final int maxUses;
-        private final int experience;
-        private final float multiplier;
-
-        public SellItemFactory(Block block, int i, int j, int k, int l) {
-            this(new ItemStack(block), i, j, k, l);
-        }
-
-        public SellItemFactory(Item item, int i, int j, int k) {
-            this((ItemStack)(new ItemStack(item)), i, j, 12, k);
-        }
-
-        public SellItemFactory(Item item, int i, int j, int k, int l) {
-            this(new ItemStack(item), i, j, k, l);
-        }
-
-        public SellItemFactory(ItemStack itemStack, int i, int j, int k, int l) {
-            this(itemStack, i, j, k, l, 0.05F);
-        }
-
-        public SellItemFactory(ItemStack itemStack, int price, int count, int maxUses, int experience, float multiplier) {
-            this.sell = itemStack;
-            this.price = price;
-            this.count = count;
-            this.maxUses = maxUses;
-            this.experience = experience;
-            this.multiplier = multiplier;
-        }
-
-        public TradeOffer create(Entity entity, Random random) {
-            return new TradeOffer(new ItemStack(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, this.experience, this.multiplier);
-        }
-    }
 
     @Shadow private native static Int2ObjectMap<TradeOffers.Factory[]> copyToFastUtilMap(ImmutableMap<Integer, TradeOffers.Factory[]> immutableMap);
     static {
