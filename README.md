@@ -3,7 +3,7 @@ This mod adds various trades to the wandering trader.
 **Note: Other mods that edit the Wandering Trader's Trades may not be compatible.**  
 **Datapacks that add trades should still work fine.**  
 
-v1.0.0 was last tested and working on 1.19.2 with Java 17.  
+**Last successful test was using 1.19.2 and Java 17.**  
 
 ## Trades
 * Tadpole Bucket:
@@ -19,4 +19,7 @@ v1.0.0 was last tested and working on 1.19.2 with Java 17.
     - Exp: 1,
     - Group: 2
 
-###### Use this mod at your own risk.
+## Credits  
+Thanks to [JudgeAlexander](https://www.youtube.com/@JudgeAlex) for the idea behind this mod.
+
+###### Use this mod at your own risk.  
