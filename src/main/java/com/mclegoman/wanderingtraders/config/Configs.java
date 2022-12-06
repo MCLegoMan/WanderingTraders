@@ -27,7 +27,7 @@ public class Configs {
     }
 
     private static void createConfigs() {
-        configs.addComment("WanderingTraders v1.0.1");
+        configs.addComment("WanderingTraders v1.0.2");
         configs.addComment("https://github.com/MCLegoMan/WanderingTraders");
         configs.addLineBreak();
         configs.addComment("Author: Daniel-Tayden Larsen (MCLegoMan)");
