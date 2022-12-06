@@ -3,6 +3,7 @@
 This mod adds various trades to the wandering trader.
 
 **Note: Other mods that edit the Wandering Trader's Trades may not be compatible.**
+
 **Datapacks that add trades should still work fine.**
 
 
