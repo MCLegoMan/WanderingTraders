@@ -6,9 +6,7 @@ This mod adds various trades to the wandering trader.
 **Last successful test was using 1.19.2 and Java 17.**  
 
 
-**The config file can be located at:** `.minecraft/configs/wanderingtraders_config.properties`
-
-**Last successful test was using 1.19.2 and Java 17.**
+**The config file can be located at:** `.minecraft/configs/wanderingtraders_config.properties`  
 
 ## TradeTypes:
 * `vanilla`
