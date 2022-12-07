@@ -9,7 +9,6 @@
 package com.mclegoman.wanderingtraders.mixin;
 
 import com.google.common.collect.ImmutableMap;
-import com.mclegoman.wanderingtraders.ServerMain;
 import com.mclegoman.wanderingtraders.config.Configs;
 import com.mclegoman.wanderingtraders.registry.Placeholders;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
