@@ -1,5 +1,5 @@
 /*
-    WanderingTraders v1.0.1
+    WanderingTraders v1.0.2
     https://github.com/MCLegoMan/WanderingTraders
 
     Author: Daniel-Tayden Larsen (MCLegoMan)
@@ -44,8 +44,6 @@ public class Configs {
 
     private static void assignConfigs() {
         TRADE_TYPE = CONFIG.getOrDefault("TradeType", "custom");
-        TRADE_TYPE = CONFIG.getOrDefault("debug", "false");
-
-        System.out.println("All " + configs.getConfigsList().size() + " have been set properly");
+        DEBUG = CONFIG.getOrDefault("debug", "false");
     }
 }

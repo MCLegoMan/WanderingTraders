@@ -1,5 +1,5 @@
 /*
-    WanderingTraders v1.0.1
+    WanderingTraders v1.0.2
     https://github.com/MCLegoMan/WanderingTraders
 
     Author: Daniel-Tayden Larsen (MCLegoMan)

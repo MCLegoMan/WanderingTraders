@@ -1,5 +1,5 @@
 /*
-    WanderingTraders v1.0.1
+    WanderingTraders v1.0.2
     https://github.com/MCLegoMan/WanderingTraders
 
     Author: Daniel-Tayden Larsen (MCLegoMan)
@@ -31,8 +31,8 @@ public class TraderOffersMixin {
 
     @Shadow private native static Int2ObjectMap<TradeOffers.Factory[]> copyToFastUtilMap(ImmutableMap<Integer, TradeOffers.Factory[]> immutableMap);
     static {
-        if(Configs.TRADE_TYPE.equalsIgnoreCase("custom")){
-            if(Configs.DEBUG.equalsIgnoreCase("true")){
+        if(Placeholders.TRADE_TYPE.equals("custom")){
+            if(Placeholders.DEBUG.equals("true")){
                 Placeholders.LOGGER.info(Placeholders.PREFIX + "DEBUG: Config: " + "\" " + Configs.TRADE_TYPE + "\"" + "Game: \"custom\"");
             }
             WANDERING_TRADER_TRADES = copyToFastUtilMap(ImmutableMap.of(1,
@@ -109,13 +109,13 @@ public class TraderOffersMixin {
                             new TradeOffers.SellItemFactory(Items.GUNPOWDER, 1, 1, 8, 1),
                             new TradeOffers.SellItemFactory(Items.PODZOL, 3, 3, 6, 1),
                             new TradeOffers.SellItemFactory(Items.TURTLE_EGG, 6, 1, 3, 1)}));
-        } else if (Configs.TRADE_TYPE.equalsIgnoreCase("vanilla")) {
-            if(Configs.DEBUG.equalsIgnoreCase("true")){
+        } else if(Placeholders.TRADE_TYPE.equals("vanilla")){
+            if(Placeholders.DEBUG.equals("true")){
                 Placeholders.LOGGER.info(Placeholders.PREFIX + "DEBUG: Config: " + "\" " + Configs.TRADE_TYPE + "\"" + "Game: \"vanilla\"");
             }
             WANDERING_TRADER_TRADES = TradeOffers.WANDERING_TRADER_TRADES;
         } else {
-            if(Configs.DEBUG.equalsIgnoreCase("true")){
+            if(Placeholders.DEBUG.equals("true")){
                 Placeholders.LOGGER.info(Placeholders.PREFIX + "DEBUG: Config: " + "\" " + Configs.TRADE_TYPE + "\"" + "Game: \"else\"");
             }
             WANDERING_TRADER_TRADES = copyToFastUtilMap(ImmutableMap.of(1,

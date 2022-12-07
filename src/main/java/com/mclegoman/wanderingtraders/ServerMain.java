@@ -8,7 +8,6 @@
 
 package com.mclegoman.wanderingtraders;
 
-import com.mclegoman.wanderingtraders.config.Configs;
 import com.mclegoman.wanderingtraders.registry.Placeholders;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -18,7 +17,7 @@ public class ServerMain implements ModInitializer {
     @Override
     public void onInitialize() {
         Placeholders.LOGGER.info(Placeholders.PREFIX + "Initializing Server!");
-        Configs.register();
+        Placeholders.registerConfigs();
         FabricLoader.getInstance().getModContainer("legolib").ifPresent(
                 modContainer -> {
                     legolibInstalled = true;
